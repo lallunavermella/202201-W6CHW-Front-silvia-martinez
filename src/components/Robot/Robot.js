@@ -5,8 +5,12 @@ const RobotCard = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: gold;
+  background-color: #1a659e;
   flex-wrap: wrap;
+  margin: 10px;
+  border-radius: 25px;
+  border: 3px solid grey;
+  width: 380px;
   img {
     height: 120px;
   }
@@ -16,14 +20,14 @@ const Nombre = styled.h2`
   display: flex;
   flex-direction: row;
   align-items: center;
-  color: red;
+  color: #ff6b35;
 `;
 
 const Caracteristicas = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: violet;
+  color: #f7c59f;
   font-size: 15px;
 `;
 
