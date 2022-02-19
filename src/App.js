@@ -1,10 +1,13 @@
 import "./App.css";
-import Robot from "./components/Robot/Robot";
+import MainPage from "./pages/mainPage";
+import { Route, Routes } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
-      <Robot />
+      <Routes>
+        <Route path="/robots" element={<MainPage />} />
+      </Routes>
     </div>
   );
 }
