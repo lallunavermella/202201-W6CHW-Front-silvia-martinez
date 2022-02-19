@@ -11,7 +11,6 @@ const MainPage = () => {
     <>
       <div className="container">
         <Title>Robots</Title>
-        <List></List>
       </div>
     </>
   );
