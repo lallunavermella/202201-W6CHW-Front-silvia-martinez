@@ -10,8 +10,8 @@ export const loadRobotsThunks = async (dispatch) => {
   dispatch(loadRobotsActions(robots.robots));
 };
 
-export const loadOneRobotThunks = async (dispatch) => {
-  const response = await fetch(`${process.env.REACT_APP_API_URL}` / `${id}`);
+export const loadOneRobotThunks = (id) => async (dispatch) => {
+  const response = await fetch(`${process.env.REACT_APP_API_URL}/${id}`);
   const robot = response.json();
 
   dispatch(loadOneRobotActions(robot));
