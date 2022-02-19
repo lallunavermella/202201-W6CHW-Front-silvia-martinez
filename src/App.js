@@ -7,8 +7,7 @@ function App() {
     <div className="App">
       <h1>Robots</h1>
       <Routes>
-        <Route path="/" element={<div>HOLA</div>} />
-        <Route path="/robots" element={<MainPage />} />
+        <Route path="/" element={<MainPage />} />
       </Routes>
     </div>
   );
