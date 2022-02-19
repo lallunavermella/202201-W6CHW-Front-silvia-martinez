@@ -1,7 +1,8 @@
 import { rest } from "msw";
 
 export const handlers = [
-  rest.get(process.env.API_URL, (req, res, ctx) => {
+  rest.get(process.env.REACT_APP_API_URL, (req, res, ctx) => {
+    console.log("hi");
     return res(
       ctx.status(200),
       ctx.json([
