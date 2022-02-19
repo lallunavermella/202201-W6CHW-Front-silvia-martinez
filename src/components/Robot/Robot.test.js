@@ -10,9 +10,11 @@ describe("Given a Robot component", () => {
         id: 1,
         name: "Pepe",
         image: "unafoto",
-        velocity: "3",
-        resistence: "7",
-        creation: "2019",
+        caractheristics: {
+          velocity: "3",
+          resistence: "7",
+          creation: "2019",
+        },
       };
       renderWithProviders(<Robot robot={robot} />);
 
