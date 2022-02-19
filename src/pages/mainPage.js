@@ -10,7 +10,7 @@ const MainPage = () => {
   return (
     <>
       <div className="container">
-        <Title>Robots</Title>
+        <Title>Robots List</Title>
         <List />
       </div>
     </>
