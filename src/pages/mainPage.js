@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import List from "../components/List/List";
 
 const Title = styled.h1`
   color: magenta;
@@ -10,6 +11,7 @@ const MainPage = () => {
     <>
       <div className="container">
         <Title>Robots</Title>
+        <List />
       </div>
     </>
   );
