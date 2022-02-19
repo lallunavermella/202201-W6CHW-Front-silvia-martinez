@@ -7,7 +7,7 @@ describe("Given a main page component", () => {
     test("It should render a title", () => {
       renderWithProviders(<MainPage />);
 
-      const title = screen.getByText("Robots");
+      const title = screen.getByText("Robots List");
 
       expect(title).toBeInTheDocument();
     });
