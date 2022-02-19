@@ -1,4 +1,3 @@
-import List from "../components/List/List";
 import styled from "styled-components";
 
 const Title = styled.h1`
