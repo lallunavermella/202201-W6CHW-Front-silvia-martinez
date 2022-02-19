@@ -7,6 +7,9 @@ const RobotCard = styled.div`
   justify-content: center;
   background-color: gold;
   flex-wrap: wrap;
+  img {
+    height: 120px;
+  }
 `;
 
 const Nombre = styled.h2`
@@ -24,11 +27,13 @@ const Caracteristicas = styled.div`
   font-size: 15px;
 `;
 
-const Robot = ({ nombre, imagen, velocidad, resistencia, creacion }) => {
+const Robot = ({
+  robot: { name, imagen, velocidad, resistencia, creacion },
+}) => {
   return (
     <>
       <RobotCard>
-        <Nombre>{nombre}Nombre</Nombre>
+        <Nombre>{name}</Nombre>
         <img src={imagen} alt="imagen robot" />
         <Caracteristicas>
           <p>Velocidad:{velocidad}</p>
