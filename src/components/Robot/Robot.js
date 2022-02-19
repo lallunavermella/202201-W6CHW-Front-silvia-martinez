@@ -27,18 +27,16 @@ const Caracteristicas = styled.div`
   font-size: 15px;
 `;
 
-const Robot = ({
-  robot: { name, imagen, velocidad, resistencia, creacion },
-}) => {
+const Robot = ({ robot: { name, image, velocity, resistence, creation } }) => {
   return (
     <>
       <RobotCard>
         <Nombre>{name}</Nombre>
-        <img src={imagen} alt="imagen robot" />
+        <img src={image} alt="imagen robot" />
         <Caracteristicas>
-          <p>Velocidad:{velocidad}</p>
-          <p>Resistencia:{resistencia}</p>
-          <p>Fecha de creacion:{creacion}</p>
+          <p>Velocidad:{velocity}</p>
+          <p>Resistencia:{resistence}</p>
+          <p>Fecha de creacion:{creation}</p>
         </Caracteristicas>
       </RobotCard>
     </>

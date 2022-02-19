@@ -13,7 +13,6 @@ const ListStyled = styled.ul`
 
 const List = () => {
   const robots = useSelector((state) => state.robots);
-  console.log(robots);
   const dispatch = useDispatch();
 
   useEffect(() => {
