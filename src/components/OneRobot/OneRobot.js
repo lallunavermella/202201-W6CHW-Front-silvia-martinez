@@ -43,11 +43,11 @@ const OneRobot = ({
       <RobotCard>
         <Nombre>{name}</Nombre>
         <img src={image} alt="imagen robot" />
-        <Caracteristicas>
-          {/*  <p>Velocidad:{velocity}</p> */}
-          {/*  <p>Resistencia:{resistence}</p>
-          <p>Fecha de creacion:{creation}</p> */}
-        </Caracteristicas>
+        {/* <Caracteristicas>
+          <p>Velocidad:{velocity}</p>
+          <p>Resistencia:{resistence}</p>
+          <p>Fecha de creacion:{creation}</p>
+        </Caracteristicas> */}
       </RobotCard>
     </>
   );
