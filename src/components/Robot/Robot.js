@@ -41,6 +41,7 @@ const Robot = ({
     image,
     caractheristics: { velocity, resistence, creation },
   },
+  action,
 }) => {
   let navigate = useNavigate();
   const viewDetails = () => {
@@ -59,7 +60,7 @@ const Robot = ({
             <p>Fecha de creacion:{creation}</p>
           </Caracteristicas>
         </div>
-        <Button actionOnClick={() => {}} />
+        <Button actionOnClick={action} />
       </RobotCard>
     </>
   );
