@@ -1,9 +1,6 @@
 import Robot from "../Robot/Robot";
 import styled from "styled-components";
-import {
-  loadOneRobotThunks,
-  loadRobotsThunks,
-} from "../../redux/thunks/thunks";
+import { loadRobotsThunks } from "../../redux/thunks/thunks";
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";

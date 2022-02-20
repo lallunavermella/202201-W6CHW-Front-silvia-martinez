@@ -7,7 +7,7 @@ const robotsReducers = (currentRobots = [], action = {}) => {
       newRobots = [...action.robots];
       break;
     case actionTypes.loadOneRobot:
-      newRobots = [...action.robots];
+      newRobots = { ...action.robot };
       break;
     default:
       newRobots = [...currentRobots];

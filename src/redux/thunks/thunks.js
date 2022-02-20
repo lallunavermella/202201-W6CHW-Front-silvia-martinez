@@ -12,7 +12,7 @@ export const loadRobotsThunks = async (dispatch) => {
 
 export const loadOneRobotThunks = (id) => async (dispatch) => {
   const response = await fetch(`${process.env.REACT_APP_API_URL}/${id}`);
-  const robot = response.json();
-
+  const robot = await response.json();
+  console.log(robot);
   dispatch(loadOneRobotActions(robot));
 };

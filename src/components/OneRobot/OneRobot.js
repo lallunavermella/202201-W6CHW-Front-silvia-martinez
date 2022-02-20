@@ -1,10 +1,4 @@
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
-import {
-  loadOneRobotThunks,
-  loadRobotsThunks,
-} from "../../redux/thunks/thunks";
 
 const RobotCard = styled.div`
   display: flex;
@@ -41,29 +35,18 @@ const OneRobot = ({
   robot: {
     name,
     image,
-    caractheristics: { velocity, resistence, creation },
+    /*  caractheristics: { velocity, resistence, creation }, */
   },
 }) => {
-  const robot = useSelector((state) => state.robot);
-  const dispatch = useDispatch();
-
-  const loadOneRobotActions = (id) => {
-    dispatch(loadOneRobotThunks(id));
-  };
-
-  useEffect(() => {
-    dispatch(loadOneRobotThunks);
-  }, [dispatch]);
-
   return (
     <>
       <RobotCard>
         <Nombre>{name}</Nombre>
         <img src={image} alt="imagen robot" />
         <Caracteristicas>
-          <p>Velocidad:{velocity}</p>
-          <p>Resistencia:{resistence}</p>
-          <p>Fecha de creacion:{creation}</p>
+          {/*  <p>Velocidad:{velocity}</p> */}
+          {/*  <p>Resistencia:{resistence}</p>
+          <p>Fecha de creacion:{creation}</p> */}
         </Caracteristicas>
       </RobotCard>
     </>
