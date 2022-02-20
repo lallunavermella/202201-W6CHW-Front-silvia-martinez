@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 const RobotCard = styled.div`
@@ -33,14 +34,20 @@ const Caracteristicas = styled.div`
 
 const Robot = ({
   robot: {
+    _id,
     name,
     image,
     caractheristics: { velocity, resistence, creation },
   },
 }) => {
+  let navigate = useNavigate();
+  const viewDetails = () => {
+    navigate(`/robots/${_id}`);
+  };
+
   return (
     <>
-      <RobotCard>
+      <RobotCard onClick={viewDetails}>
         <Nombre>{name}</Nombre>
         <img src={image} alt="imagen robot" />
         <Caracteristicas>

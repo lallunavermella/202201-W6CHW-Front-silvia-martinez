@@ -3,9 +3,9 @@ import OneRobot from "../components/OneRobot/OneRobot";
 
 const DetailPage = () => {
   const params = useParams();
-  const { id } = params;
+  const { robot } = params;
 
-  return <OneRobot robot={id} />;
+  return <OneRobot robot={robot} />;
 };
 
 export default DetailPage;
