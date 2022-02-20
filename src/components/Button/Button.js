@@ -3,7 +3,7 @@ import styled from "styled-components";
 const ButtonTxt = styled.button`
   background-color: #7dcfb6;
   border-color: #fbd1a2;
-  color: white;
+  color: #1d4e89;
   border-radius: 4px;
   width: 65px;
   height: 35px;
@@ -13,9 +13,10 @@ const ButtonTxt = styled.button`
   align-items: center;
   font-size: 14px;
   padding: 4px 8px 4px 6px;
+  margin-bottom: 5px;
 `;
 
-const ButtonText = ({ actionOnClick }) => {
+const Button = ({ actionOnClick }) => {
   return (
     <ButtonTxt type="button" onClick={actionOnClick}>
       Delete
@@ -23,4 +24,4 @@ const ButtonText = ({ actionOnClick }) => {
   );
 };
 
-export default ButtonText;
+export default Button;

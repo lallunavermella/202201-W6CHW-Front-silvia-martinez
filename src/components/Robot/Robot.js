@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import Button from "../Button/Button";
 
 const RobotCard = styled.div`
   display: flex;
@@ -21,6 +22,7 @@ const Nombre = styled.h2`
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
   color: #ff6b35;
 `;
 
@@ -47,14 +49,17 @@ const Robot = ({
 
   return (
     <>
-      <RobotCard onClick={viewDetails}>
-        <Nombre>{name}</Nombre>
-        <img src={image} alt="imagen robot" />
-        <Caracteristicas>
-          <p>Velocidad:{velocity}</p>
-          <p>Resistencia:{resistence}</p>
-          <p>Fecha de creacion:{creation}</p>
-        </Caracteristicas>
+      <RobotCard>
+        <div onClick={viewDetails}>
+          <Nombre>{name}</Nombre>
+          <img src={image} alt="imagen robot" />
+          <Caracteristicas>
+            <p>Velocidad:{velocity}</p>
+            <p>Resistencia:{resistence}</p>
+            <p>Fecha de creacion:{creation}</p>
+          </Caracteristicas>
+        </div>
+        <Button actionOnClick={() => {}} />
       </RobotCard>
     </>
   );
