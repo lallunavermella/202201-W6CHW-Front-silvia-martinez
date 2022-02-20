@@ -1,4 +1,5 @@
 import {
+  createRobotActions,
   deleteRobotActions,
   loadOneRobotActions,
   loadRobotsActions,
@@ -14,7 +15,7 @@ export const loadRobotsThunks = async (dispatch) => {
 export const loadOneRobotThunks = (id) => async (dispatch) => {
   const response = await fetch(`${process.env.REACT_APP_API_URL}/${id}`);
   const robots = await response.json();
-  console.log(robots);
+
   dispatch(loadOneRobotActions(robots));
 };
 
@@ -24,5 +25,20 @@ export const deleteRobotThunks = (id) => async (dispatch) => {
   });
   if (response.ok) {
     dispatch(deleteRobotActions(id));
+  }
+};
+
+export const createdRobotThunk = (robot) => async (dispatch) => {
+  const response = await fetch(`${process.env.REACT_APP_API_URL}/create`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(robot),
+  });
+  const newRobot = await response.json();
+
+  if (response.ok) {
+    dispatch(createRobotActions(newRobot));
   }
 };
