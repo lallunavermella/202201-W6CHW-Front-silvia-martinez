@@ -60,7 +60,7 @@ const Robot = ({
             <p>Fecha de creacion:{creation}</p>
           </Caracteristicas>
         </div>
-        <Button actionOnClick={action} />
+        <Button actionOnClick={action} text={"Delete"} />
       </RobotCard>
     </>
   );

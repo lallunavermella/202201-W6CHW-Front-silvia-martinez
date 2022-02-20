@@ -16,10 +16,10 @@ const ButtonTxt = styled.button`
   margin-bottom: 5px;
 `;
 
-const Button = ({ actionOnClick }) => {
+const Button = ({ text, actionOnClick }) => {
   return (
     <ButtonTxt type="button" onClick={actionOnClick}>
-      Delete
+      {text}
     </ButtonTxt>
   );
 };
