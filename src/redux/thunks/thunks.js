@@ -1,4 +1,5 @@
 import {
+  deleteRobotActions,
   loadOneRobotActions,
   loadRobotsActions,
 } from "../actions/actionCreators";
@@ -15,4 +16,13 @@ export const loadOneRobotThunks = (id) => async (dispatch) => {
   const robots = await response.json();
   console.log(robots);
   dispatch(loadOneRobotActions(robots));
+};
+
+export const deleteRobotThunks = (id) => async (dispatch) => {
+  const response = await fetch(`${process.env.REACT_APP_API_URL}/${id}`, {
+    method: "DELETE",
+  });
+  if (response.ok) {
+    dispatch(deleteRobotActions(id));
+  }
 };
