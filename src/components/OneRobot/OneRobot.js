@@ -1,4 +1,3 @@
-import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 const RobotCard = styled.div`
@@ -11,9 +10,9 @@ const RobotCard = styled.div`
   margin: 10px;
   border-radius: 25px;
   border: 3px solid grey;
-  width: 380px;
+  width: 480px;
   img {
-    height: 120px;
+    height: 220px;
   }
 `;
 
@@ -32,32 +31,26 @@ const Caracteristicas = styled.div`
   font-size: 15px;
 `;
 
-const Robot = ({
+const OneRobot = ({
   robot: {
-    _id,
     name,
     image,
-    caractheristics: { velocity, resistence, creation },
+    /*  caractheristics: { velocity, resistence, creation }, */
   },
 }) => {
-  let navigate = useNavigate();
-  const viewDetails = () => {
-    navigate(`/robots/${_id}`);
-  };
-
   return (
     <>
-      <RobotCard onClick={viewDetails}>
+      <RobotCard>
         <Nombre>{name}</Nombre>
         <img src={image} alt="imagen robot" />
         <Caracteristicas>
-          <p>Velocidad:{velocity}</p>
-          <p>Resistencia:{resistence}</p>
-          <p>Fecha de creacion:{creation}</p>
+          {/*  <p>Velocidad:{velocity}</p> */}
+          {/*  <p>Resistencia:{resistence}</p>
+          <p>Fecha de creacion:{creation}</p> */}
         </Caracteristicas>
       </RobotCard>
     </>
   );
 };
 
-export default Robot;
+export default OneRobot;
