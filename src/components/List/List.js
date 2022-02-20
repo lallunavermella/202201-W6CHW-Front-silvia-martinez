@@ -1,6 +1,6 @@
 import Robot from "../Robot/Robot";
 import styled from "styled-components";
-import { loadRobotsThunks } from "../../redux/thunks/thunks";
+import { deleteRobotThunks, loadRobotsThunks } from "../../redux/thunks/thunks";
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
@@ -19,6 +19,10 @@ const List = () => {
   const robots = useSelector((state) => state.robots);
   const dispatch = useDispatch();
 
+  const deleteRobot = (id) => {
+    dispatch(deleteRobotThunks(id));
+  };
+
   useEffect(() => {
     dispatch(loadRobotsThunks);
   }, [dispatch]);
@@ -26,7 +30,13 @@ const List = () => {
   return (
     <ListStyled>
       {robots.map((robot) => (
-        <Robot key={robot._id} robot={robot} />
+        <Robot
+          key={robot._id}
+          robot={robot}
+          action={() => {
+            deleteRobot(robot._id);
+          }}
+        />
       ))}
     </ListStyled>
   );
