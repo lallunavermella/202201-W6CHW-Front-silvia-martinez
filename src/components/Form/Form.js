@@ -3,6 +3,7 @@ import Button from "../Button/Button";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { createdRobotThunk } from "../../redux/thunks/thunks";
+import { useNavigate } from "react-router-dom";
 
 const StyledForm = styled.form`
   width: 100%;
@@ -45,17 +46,20 @@ const Form = () => {
   const dispatch = useDispatch();
 
   const initialFields = {
-    display_name: "",
-    profile_image_url: "",
-    description: "",
+    name: "",
+    image: "",
+    creation: "",
   };
 
   const [formData, setFormData] = useState(initialFields);
+  const navigate = useNavigate();
 
   const onFormSubmit = (event) => {
     event.preventDefault();
     dispatch(createdRobotThunk(formData));
     resetForm();
+
+    navigate(`/`);
   };
 
   const resetForm = () => {
@@ -74,59 +78,59 @@ const Form = () => {
       <StyledForm>
         <StyleLineForm onSubmit={onFormSubmit}>
           <FormBlock className="form-block">
-            <label htmlFor="display_name">Name:</label>
+            <label htmlFor="name">Name:</label>
             <StyledInput
               autoComplete="off"
               type="text"
-              id="display_name"
+              id="name"
               placeholder="Your Name"
               onChange={changeData}
               value={formData.name}
             />
           </FormBlock>
           <FormBlock className="form-block">
-            <label htmlFor="profile_image_url">Image:</label>
+            <label htmlFor="image">Image:</label>
             <StyledInput
               autoComplete="off"
               type="imageInput"
-              id="profile_image_url"
+              id="image"
               placeholder="Your image"
               onChange={changeData}
               value={formData.image}
             />
           </FormBlock>
           <FormBlock className="form-block">
-            <label htmlFor="display_speed">Speed:</label>
+            <label htmlFor="velocity">Speed:</label>
             <StyledInput
               autoComplete="off"
               type="number"
               min={0}
               max={10}
-              id="display_speed"
+              id="velocity"
               placeholder="Speed"
               onChange={changeData}
               value={formData.velocity}
             />
           </FormBlock>
           <FormBlock className="form-block">
-            <label htmlFor="display_resistence">Resistence:</label>
+            <label htmlFor="resistence">Resistence:</label>
             <StyledInput
               autoComplete="off"
               type="number"
               min={0}
               max={10}
-              id="display_resistence"
+              id="resistence"
               placeholder="Resistence"
               onChange={changeData}
               value={formData.resistence}
             />
           </FormBlock>
           <FormBlock className="form-block">
-            <label htmlFor="display_creation">Creation:</label>
+            <label htmlFor="creation">Creation:</label>
             <StyledInput
               autoComplete="off"
               type="text"
-              id="display_creation"
+              id="creation"
               placeholder="Creation"
               onChange={changeData}
               value={formData.creation}

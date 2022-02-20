@@ -28,17 +28,27 @@ export const deleteRobotThunks = (id) => async (dispatch) => {
   }
 };
 
-export const createdRobotThunk = (robot) => async (dispatch) => {
-  const response = await fetch(`${process.env.REACT_APP_API_URL}/create`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(robot),
-  });
-  const newRobot = await response.json();
+export const createdRobotThunk =
+  ({ name, image, velocity, creation, resistence }) =>
+  async (dispatch) => {
+    const response = await fetch(`${process.env.REACT_APP_API_URL}/create`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name,
+        image,
+        caractheristics: {
+          velocity,
+          resistence,
+          creation,
+        },
+      }),
+    });
+    const newRobot = await response.json();
 
-  if (response.ok) {
-    dispatch(createRobotActions(newRobot));
-  }
-};
+    if (response.ok) {
+      dispatch(createRobotActions(newRobot));
+    }
+  };
