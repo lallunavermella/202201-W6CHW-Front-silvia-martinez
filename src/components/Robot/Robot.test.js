@@ -1,5 +1,6 @@
 import { screen } from "@testing-library/react";
 import renderWithProviders from "../../setupTests";
+import { BrowserRouter, useNavigate } from "react-router-dom";
 
 import Robot from "./Robot";
 
@@ -16,7 +17,11 @@ describe("Given a Robot component", () => {
           creation: "2019",
         },
       };
-      renderWithProviders(<Robot robot={robot} />);
+      renderWithProviders(
+        <BrowserRouter>
+          <Robot robot={robot} />
+        </BrowserRouter>
+      );
 
       const heading = screen.getByRole("heading", { name: "Pepe" });
 
