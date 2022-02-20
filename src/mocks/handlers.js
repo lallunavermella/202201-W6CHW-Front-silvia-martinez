@@ -32,4 +32,10 @@ export const handlers = [
       ])
     );
   }),
+  rest.delete(`${process.env.REACT_APP_API_URL}/2`, (req, res, ctx) =>
+    res(ctx.status(200), ctx.json({}))
+  ),
+  rest.delete(`${process.env.REACT_APP_API_URL}/10`, (req, res, ctx) =>
+    res(ctx.status(404), ctx.json({}))
+  ),
 ];
