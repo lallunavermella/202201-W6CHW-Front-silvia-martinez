@@ -8,7 +8,8 @@ const DetailPage = () => {
   let { id } = useParams();
 
   const dispatch = useDispatch();
-  const robot = useSelector((state) => state.robots);
+  const robot = useSelector((state) => state.robots[0]);
+  console.log(robot);
 
   useEffect(() => {
     dispatch(loadOneRobotThunks(id));

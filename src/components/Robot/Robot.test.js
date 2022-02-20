@@ -1,6 +1,6 @@
 import { screen } from "@testing-library/react";
 import renderWithProviders from "../../setupTests";
-import { BrowserRouter, useNavigate } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 
 import Robot from "./Robot";
 
