@@ -31,10 +31,10 @@ const List = () => {
     <ListStyled>
       {robots.map((robot) => (
         <Robot
-          key={robot._id}
+          key={robot.id}
           robot={robot}
           action={() => {
-            deleteRobot(robot._id);
+            deleteRobot(robot.id);
           }}
         />
       ))}

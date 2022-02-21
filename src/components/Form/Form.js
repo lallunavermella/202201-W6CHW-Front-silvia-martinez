@@ -48,6 +48,8 @@ const Form = () => {
   const initialFields = {
     name: "",
     image: "",
+    velocity: "",
+    resistence: "",
     creation: "",
   };
 
