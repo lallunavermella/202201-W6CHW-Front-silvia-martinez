@@ -29,11 +29,11 @@ describe("Given robotsReducers", () => {
   describe("When given a delete action", () => {
     test("Then should return the list minus the corresponding with the id", () => {
       const currentRobot = [
-        { name: "Pepe", _id: 1 },
-        { name: "Pipo", _id: 2 },
+        { name: "Pepe", id: 1 },
+        { name: "Pipo", id: 2 },
       ];
 
-      const expectedRobots = [{ name: "Pipo", _id: 2 }];
+      const expectedRobots = [{ name: "Pipo", id: 2 }];
       const action = {
         type: actionTypes.deleteRobot,
         id: 1,
