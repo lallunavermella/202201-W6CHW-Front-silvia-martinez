@@ -38,7 +38,6 @@ const OneRobot = ({
     caractheristics: { velocity, resistence, creation },
   },
 }) => {
-  console.log(name, image);
   return (
     <>
       <RobotCard>
