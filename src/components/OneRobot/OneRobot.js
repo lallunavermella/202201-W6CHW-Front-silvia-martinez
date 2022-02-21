@@ -23,31 +23,32 @@ const Nombre = styled.h2`
   color: #ff6b35;
 `;
 
-/* const Caracteristicas = styled.div`
+const Caracteristicas = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   color: #f7c59f;
   font-size: 15px;
-`; */
+`;
 
 const OneRobot = ({
   robot: {
     name,
     image,
-    /*  caractheristics: { velocity, resistence, creation }, */
+    caractheristics: { velocity, resistence, creation },
   },
 }) => {
+  console.log(name, image);
   return (
     <>
       <RobotCard>
         <Nombre>{name}</Nombre>
         <img src={image} alt="imagen robot" />
-        {/* <Caracteristicas>
+        <Caracteristicas>
           <p>Velocidad:{velocity}</p>
           <p>Resistencia:{resistence}</p>
           <p>Fecha de creacion:{creation}</p>
-        </Caracteristicas> */}
+        </Caracteristicas>
       </RobotCard>
     </>
   );
